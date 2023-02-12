@@ -1,8 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { store } from './app/store';
-import App from './App';
+import { store } from './configureStore';
+import App from './containers/App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 

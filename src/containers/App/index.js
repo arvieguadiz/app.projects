@@ -1,19 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import logo from '../../images/logo.svg';
+import { Counter } from '../../features/counter/Counter';
+import '../../App.css';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { makeSelectApp } from './selectors';
+import { changeName } from './reducer';
 
 function App() {
+  const dispatch = useDispatch();
+  const appState = useSelector(makeSelectApp);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
+        {/* <Counter /> */}
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit <code>src/App.js</code> and save to reload. {JSON.stringify(appState.name)}
         </p>
         <span>
-          <span>Learn </span>
+          <span onClick={() => dispatch(changeName('benito'))}>Learn </span>
           <a
             className="App-link"
             href="https://reactjs.org/"
