@@ -1,21 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
+import appActions from "./actions";
 
-const initialState = {
-  name: 'arvie',
+export const initialState = {
+  // 
 };
 
 export const appReducer = createSlice({
   name: 'appReducer',
   initialState,
-  reducers: {
-    changeName: (state, action) => {
-      state.name = action.payload;
-    },
-  },
+  reducers: appActions,
 });
 
-export const {
-  changeName,
-} = appReducer.actions;
+// export const {
+//   changeTheme,
+// } = appReducer.actions;
 
 export default appReducer.reducer;
